@@ -6,7 +6,7 @@ This is a place for me to keep some scripts I use for minion data analysis.
 
 [NanoFilt](https://github.com/wdecoster/nanofilt)
 
-[amplicon_sorter](https://github.com/avierstr/amplicon_s)
+[amplicon_sorter](https://github.com/avierstr/amplicon_sorter)
 
 ## Example of guppy bascalling
 
