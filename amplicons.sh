@@ -8,7 +8,10 @@ do
 	cat pass/barcode$bc/*.fastq | NanoFilt -q 12 -l 500 --maxlength 800 > nanofilt_qc/barcode$bc.fastq
 	echo Running amplicon_sorter
 	python3 ~/software/amplicon_sorter/amplicon_sorter.py -np 8 -i nanofilt_qc/barcode$bc.fastq -o amplicon_sorter
-
-
 done
 
+# combine all the consensus sequences
+cat amplicon_sorter/barcode*/barcode*_consensussequences.fasta > combined.fasta
+
+# allign and get them all in the same orientation
+mafft --adjustdirectionaccurately combined.fasta > combined.aln
