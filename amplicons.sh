@@ -11,7 +11,7 @@ do
 done
 
 # combine all the consensus sequences
-cat amplicon_sorter/barcode*/barcode*_consensussequences.fasta > combined.fasta
+cat amplicon_sorter/barcode*/barcode??_consensussequences.fasta > combined.fasta
 
 # allign and get them all in the same orientation
 mafft --adjustdirectionaccurately combined.fasta > combined.aln
