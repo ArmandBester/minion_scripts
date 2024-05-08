@@ -17,3 +17,10 @@ guppy_basecaller -i [input_folder] -r -s [output_folder] -x "cuda:all" \
                  --require_barcodes_both_ends --barcode_kits "EXP-NBD104 EXP-NBD114"
 ```
 
+## Example of using dorado
+
+```bash
+dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v4.3.0 pod5/  --min-qscore 10 --kit-name SQK-NBD114-24 > calls.bam
+
+dorado demux --output-dir demux/ --no-classify calls.bam
+```
