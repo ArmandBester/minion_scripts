@@ -27,9 +27,10 @@ dorado demux --output-dir demux/ --no-classify calls.bam
 
 ## Example of fastq and fasta conversion
 
+```bash
 for bc in {17..24}; do bamToFastq -i SQK-NBD114-24_barcode$bc.bam -fq SQK-NBD114-24_barcode$bc.fastq; done
 
 for bc in {17..24}; do seqkit fq2fa fastq_files/SQK-NBD114-24_barcode$bc.fastq  > fasta_files/SQK-NBD114-24_barcode$bc.fasta; done
-
+```
 
 
