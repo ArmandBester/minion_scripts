@@ -33,4 +33,12 @@ for bc in {17..24}; do bamToFastq -i SQK-NBD114-24_barcode$bc.bam -fq SQK-NBD114
 for bc in {17..24}; do seqkit fq2fa fastq_files/SQK-NBD114-24_barcode$bc.fastq  > fasta_files/SQK-NBD114-24_barcode$bc.fasta; done
 ```
 
+## Simple statistics
+
+```bash
+for bc in {17..24}
+do
+seqkit stats -a fastq_files/SQK-NBD114-24_barcode$bc.fastq 
+done
+```
 
