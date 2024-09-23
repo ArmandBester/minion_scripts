@@ -22,6 +22,9 @@ guppy_basecaller -i [input_folder] -r -s [output_folder] -x "cuda:all" \
 ```bash
 dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v4.3.0 pod5/  --min-qscore 10 --kit-name SQK-NBD114-24 > calls.bam
 
+# to trim all barcodes and adapters and require barcode to be at both ends
+dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v4.3.0 pod5 --min-qscore 10 --kit-name SQK-NBD114-24 --barcode-both-ends --trim all > calls.bam
+
 dorado demux --output-dir demux/ --no-classify calls.bam
 ```
 
