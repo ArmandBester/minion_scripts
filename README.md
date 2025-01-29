@@ -25,7 +25,7 @@ dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v4.3.0 pod5/  --min-qscore 10 --ki
 # to trim all barcodes and adapters and require barcode to be at both ends
 dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v4.3.0 pod5 --min-qscore 10 --kit-name SQK-NBD114-24 --barcode-both-ends --trim all > calls.bam
 
-dorado demux --output-dir demux/ --no-classify calls.bam
+dorado demux --output-dir demux/ --emit-fastq --no-classify calls.bam
 ```
 
 ## Example of fastq and fasta conversion
