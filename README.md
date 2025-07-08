@@ -51,6 +51,11 @@ done
 This is an example of how to run kraken2 on the UFS HPC utilizing a for loop
 
 ```bash
+module load ern
+ern_shell
+```
+
+```bash
 for i in {01..96}  # change this range
 do
    echo "Running kraken2 on bc$i"
