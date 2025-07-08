@@ -70,7 +70,7 @@ done
 **generate text files for krona**
 
 ```bash
-for i in {11..27}
+for i in {01..96} # change this range
 do
   kreport2krona.py -r k2report_files/barcode$i.k2report --no-intermediate-ranks -o krona_text_files/barcode$i-krona.txt
 done
