@@ -2,11 +2,6 @@
 
 This is a place for me to keep some scripts I use for minion data analysis.
 
-## Software used
-
-[NanoFilt](https://github.com/wdecoster/nanofilt)
-
-[amplicon_sorter](https://github.com/avierstr/amplicon_sorter)
 
 ## Example of guppy bascalling
 
