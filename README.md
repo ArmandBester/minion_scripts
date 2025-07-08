@@ -76,3 +76,8 @@ do
 done
 
 ```
+**now run krona on all the above files**
+
+```bash
+ ktImportText krona_text_files/*
+```
