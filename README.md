@@ -48,6 +48,8 @@ done
 ## Kraken2 on the UFS HPC
 [UFS HPC](https://docs.ern.ufs.ac.za)
 
+This is an example of how to run kraken2 on the UFS HPC utilizing a for loop
+
 ```bash
 for i in {01..96}  # change this range
 do
