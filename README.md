@@ -45,3 +45,23 @@ seqkit stats -a fastq_files/SQK-NBD114-24_barcode$bc.fastq
 done
 ```
 
+## Kraken2 on the UFS HPC
+[UFS HPC](https://docs.ern.ufs.ac.za)
+
+```bash
+for i in {01..96}  # change this range
+do
+   echo "Running kraken2 on bc$i"
+   ern jobs submit --quiet --name=kraken04.kraken2.barcode$i \
+   --threads=16 --memory=128gb --hours=100 \
+   --input="fastq_pass_v5/*barcode$i.fastq" \
+   --input="kraken_out/" \
+   --module='kraken/1.2_754d9b0 python=3.10' \
+   --command=kraken2 -- --db Standard --threads 16 \
+   --report kraken_out/barcode$i.k2report \
+   --output kraken_out/barcode$i.kraken2 \
+   --report-minimizer-data \
+   fastq_pass_v5/*barcode$i.fastq
+done
+```
+
