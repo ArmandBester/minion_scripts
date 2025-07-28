@@ -83,10 +83,11 @@ done
 ```
 ## TB profiler
 ```bash
-for r in ../fastq_pass_supv5/*.fastq
+for r in {03..08}
 do
   echo "TB profiling $r"
-  tb-profiler profile --read1 $r --platform nanopore --call_whole_genome --prefix $r --threads 6 --csv
+  tb-profiler profile --read1 ../fastq_pass_supv5/d11d1c3891aef84b30857ebf795a74e93095769e_SQK-NBD114-96_barcode$r.fastq \
+  --platform nanopore --call_whole_genome --prefix run03_bc$r --threads 6 --csv
 done
 ```
 
