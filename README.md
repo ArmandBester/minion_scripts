@@ -81,3 +81,14 @@ done
 ```bash
  ktImportText krona_text_files/*
 ```
+## TB profiler
+```bash
+for r in ../fastq_pass_supv5/*.fastq
+do
+  echo "TB profiling $r"
+  tb-profiler profile --read1 $r --platform nanopore --call_whole_genome --prefix $r --threads 6 --csv
+done
+```
+
+
+
