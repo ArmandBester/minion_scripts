@@ -73,6 +73,25 @@ do
    fastq_pass_v5/*barcode$i.fastq
 done
 ```
+```bash
+for i in {15..36}
+do
+   echo "Running kraken2 on bc$i"
+   ern jobs submit --quiet --name=kraken10.kraken2.barcode$i \
+   --threads=16 --memory=300gb --hours=100 \
+   --input="fastq_pass/*barcode$i.fastq" \
+   --input="kraken_core_nt/" \
+   --module='kraken/1.2_754d9b0 python=3.10' \
+   --command=kraken2 -- --db core_nt --threads 16 \
+   --report kraken_core_nt/barcode$i.k2report \
+   --output kraken_core_nt/barcode$i.kraken2 \
+   --report-minimizer-data \
+   fastq_pass/*barcode$i.fastq
+done
+```
+
+
+
 To check the que (remember to load cluster/hpc)
 ```bash
 qstat -a
