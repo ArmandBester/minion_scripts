@@ -52,6 +52,10 @@ This is an example of how to run kraken2 on the UFS HPC utilizing a for loop
 module load ern
 ern_shell
 ```
+```bash
+module load cluster/hpc
+```
+
 
 ```bash
 for i in {01..96}  # change this range
