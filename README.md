@@ -73,6 +73,10 @@ do
    fastq_pass_v5/*barcode$i.fastq
 done
 ```
+To check the que (remember to load cluster/hpc)
+```bash
+qstat -a
+```
 
 **generate text files for krona**
 
