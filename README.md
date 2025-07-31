@@ -92,7 +92,7 @@ done
 
 
 
-To check the que (remember to load cluster/hpc)
+To check the queue (remember to load cluster/hpc)
 ```bash
 qstat -a
 ```
