@@ -131,6 +131,17 @@ nanoq -i "$dir/$new_name" -o "$dir/nanoq_output.fastq" -r "$dir/report.txt" -m 1
 ```
 
 ```bash
+for i in {47..69}
+do
+  echo "running nanoq on $i"
+  nanoq -i ../fastq_pass/*barcode$i.fastq -o nanoq/nanoq_barcode$i.fastq -q 12 -r nanoq/nanoq_barcode$i_report.txt -m 2000
+done
+
+```
+
+
+
+```bash
 #!/bin/bash
  
 # Set the path to the directory containing the folders with fastq.gz files
