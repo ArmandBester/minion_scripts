@@ -126,6 +126,11 @@ done
 [https://github.com/wdecoster/nanoQC](https://github.com/wdecoster/nanoQC)
 
 ```bash
+nanoq -i "$dir/$new_name" -o "$dir/nanoq_output.fastq" -r "$dir/report.txt" -m 1000 -q 12
+ 
+```
+
+```bash
 #!/bin/bash
  
 # Set the path to the directory containing the folders with fastq.gz files
