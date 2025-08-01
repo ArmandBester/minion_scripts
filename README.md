@@ -123,6 +123,8 @@ done
 
 ## Giovannie amplicon sorter script
 
+[https://github.com/wdecoster/nanoQC](https://github.com/wdecoster/nanoQC)
+
 ```bash
 #!/bin/bash
  
