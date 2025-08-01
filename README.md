@@ -121,5 +121,44 @@ do
 done
 ```
 
+## Giovannie amplicon sorter script
+
+```bash
+#!/bin/bash
+ 
+# Set the path to the directory containing the folders with fastq.gz files
+
+base_dir="/home/gghielmetti/16_20240321_rachielcattlefeces/50"
+ 
+# Iterate through each directory in the base directory
+
+for dir in "$base_dir"/*; do
+
+  if [[ -d "$dir" ]]; then
+
+    echo "Processing directory: $dir"
+ 
+    # Get the directory name
+
+    dir_name=$(basename "$dir")
+ 
+    # Rename the concatenated.fastq.gz file with the name of the directory
+
+    mv "$dir/nanoq_output.fastq" "$dir/${dir_name}_nanoq_output.fastq"
+ 
+ 
+    # Run Amplicon Sorter on the renamed concatenated.fastq file
+
+    python amplicon_sorter_2023-06-19.py -i "$dir/${dir_name}_nanoq_output.fastq" -o "$dir/amplicon_output_q12_max200000" -min 50 -max 2000 -np 16 -maxr 200000
+ 
+    echo "Amplicon Sorter completed for directory: $dir"
+
+    echo
+
+  fi
+
+done
+
+```
 
 
