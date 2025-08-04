@@ -145,9 +145,18 @@ nanoq -i "$dir/$new_name" -o "$dir/nanoq_output.fastq" -r "$dir/report.txt" -m 1
 for i in {47..69}
 do
   echo "running nanoq on $i"
-  nanoq -i ../fastq_pass/*barcode$i.fastq -o nanoq/nanoq_barcode$i.fastq -q 12 -r nanoq/nanoq_barcode$i_report.txt -m 2000
+  nanoq -i ../fastq_pass/*barcode$i.fastq -o nanoq/nanoq_barcode$i.fastq -q 12 -r nanoq/nanoq_barcode$i-report.txt -m 2000
 done
 
+```
+
+## amplicon_sorter
+```bash
+for i in {47..69}
+do
+  echo "Running amplicon soreter on $i"
+  python amplicon_sorter/amplicon_sorter.py -i nanoq/nanoq_barcode$i.fastq -o amp_sorter_out/bc$i-amp_sorter_out_q12_max200000 -min 50 -max 2000 -np 16 -maxr 200000
+done
 ```
 
 
@@ -208,3 +217,12 @@ do
 done
 ```
 
+```bash
+for i in {15..36}
+do
+  echo "Running blastn on $i"
+  blastn -task blastn -query fasta/run10-barcode$i-kraken-human.fasta -db /storage/AUX_1T_SSD/blastDBs/nt \
+  -outfmt '6 qaccver saccver pident length mismatch gapopen qstart qend sstart send evalue bitscore stitle staxid' \
+  -out blastn_out/run10-barcode$i-kraken-human.csv -num_threads 8 -max_hsps 20
+done
+```
