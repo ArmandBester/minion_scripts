@@ -200,3 +200,11 @@ do
 done
 ```
 
+```bash
+for i in {15..36}
+do
+  echo 'getting reads from barcode$i'
+  seqkit grep -n -r -f read_ids/kraken10-bc$i-human_read_headers.txt ../kraken10.kraken2.barcode$i/fastq_pass/*barcode$i.fastq > fastq/run10-barcode$i-kraken-human.fastq
+done
+```
+
