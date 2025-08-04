@@ -180,3 +180,12 @@ done
 ```
 
 
+## Filter kraken2 files for taxid
+
+```bash
+for i in {15..36}
+> do
+> cat kraken2_report/barcode$i.kraken2 | cut -f2,3 | grep -w 9606 | grep -v '\-9606-' > human/kraken10-bc$i-human_read_headers.txt
+> done
+```
+
