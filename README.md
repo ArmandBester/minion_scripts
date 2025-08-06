@@ -226,3 +226,17 @@ do
   -out blastn_out/run10-barcode$i-kraken-human.csv -num_threads 8 -max_hsps 20
 done
 ```
+
+## Abricate
+
+```bash
+touch 06_tNGS.tsv
+for db in vfdb card argannot ecoh ecoli_vf ncbi megares resfinder plasmidfinder
+do
+    echo "$db" 
+    echo "=================================================================>"
+    #abricate -db $db ../hybracter_results_medaka_R1041/FINAL_OUTPUT/complete/*.fasta >> 03_complete_abricate.tsv
+    abricate -db $db ../amp_sorter_out/06_tNGS_consensus_combined.fasta >> 06_tNGS.tsv
+    
+done
+```
