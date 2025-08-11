@@ -36,6 +36,10 @@ do
 done <models_to_call.txt 
 ```bash
 
+## Dorado testing modified basecalling
+
+
+
 
 ## Example of fastq and fasta conversion
 
