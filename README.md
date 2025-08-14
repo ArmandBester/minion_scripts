@@ -39,7 +39,13 @@ done <models_to_call.txt
 ## Dorado testing modified basecalling
 
 ```bash
-dorado basecaller models/dna_r10.4.1_e8.2_400bps_sup@v5.0.0 --modified-bases-models models/dna_r10.4.1_e8.2_400bps_sup@v5.0.0_4mC_5mC@v3, models/dna_r10.4.1_e8.2_400bps_sup@v5.0.0_5mC_5hmC@v3, models/dna_r10.4.1_e8.2_400bps_sup@v5.0.0_5mCG_5hmCG@v3, models/dna_r10.4.1_e8.2_400bps_sup@v5.0.0_6mA@v3 -r ../pod5/ --min-qscore 10 --kit-name SQK-NBD114-96 --barcode-both-ends --trim all > calls_sub_v5_epi.bam
+dorado basecaller models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0 --modified-bases-models models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_4mC_5mC\@v3/,models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_5mC_5hmC\@v3/,models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_5mCG_5hmCG\@v3/,models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_6mA\@v3/ -r ../pod5/   --min-qscore 10 --kit-name SQK-NBD114-24 > calls_supv5_w_epi.bam
+
+or as per Michaels recomendation
+
+
+dorado basecaller models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0 --modified-bases-models models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_4mC_5mC\@v3/,models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_6mA\@v3/ -r ../pod5/   --min-qscore 10 --kit-name SQK-NBD114-24 > calls_supv5_w_epi.bam
+
 ```
 
 
