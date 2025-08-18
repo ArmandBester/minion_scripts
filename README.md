@@ -26,15 +26,6 @@ dorado basecaller dna_r10.4.1_e8.2_400bps_sup@v5.0.0 -r no_sample_id/ --min-qsco
 dorado demux --output-dir demux/ --emit-fastq --no-classify calls.bam
 ```
 
-## Dorado multiple models download
-
-```bash
-while read m
-do
-  echo "$m"
-  dorado download --model $m  
-done <models_to_call.txt 
-```bash
 
 ## Dorado testing modified basecalling
 
