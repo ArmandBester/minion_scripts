@@ -110,6 +110,13 @@ To check the queue (remember to load cluster/hpc)
 qstat -a
 ```
 
+## blastn example
+
+```bash
+for i in {15..36}; do echo "Running blastn on $i"; blastn -task blastn -query fasta/run10-barcode$i-kraken-human.fasta -db /storage/AUX_1T_SSD/blastDBs/nt     -outfmt '6 qaccver saccver pident length mismatch gapopen qstart qend sstart send evalue bitscore stitle staxid'     -out blastn_out/run10-barcode$i-kraken-human.csv -num_threads 8 -max_hsps 20; done
+```
+
+
 **generate text files for krona**
 
 ```bash
