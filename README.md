@@ -35,6 +35,9 @@ per Michaels recomendation
 ```bash
 dorado basecaller models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0 --modified-bases-models models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_4mC_5mC\@v3/,models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0_6mA\@v3/ -r ../pod5/   --min-qscore 10 --kit-name SQK-NBD114-24 > calls_supv5_w_epi.bam
 
+
+"sup@v5.0.0,4mC_5mC,6mA"
+
 ```
 
 
