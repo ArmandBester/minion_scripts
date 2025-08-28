@@ -171,6 +171,19 @@ do
 done
 ```
 
+or
+
+```bash
+for i in {73..96}
+do
+  echo "running nanoq on $i"
+  nanoq -i fastq_pass/*barcode$i.fastq -o nanoq/nanoq_barcode$i.fastq -q 12 -r nanoq/nanoq_barcode$i-report.txt -m 2000
+
+  echo "Running amplicon soreter on $i"
+  python amplicon_sorter/amplicon_sorter.py -i nanoq/nanoq_barcode$i.fastq -o amp_sorter_out/bc$i-amp_sorter_out_q12_max200000 -min 50 -max 2000 -np 8 -maxr 200000
+done
+
+```
 
 
 ```bash
