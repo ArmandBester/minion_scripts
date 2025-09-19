@@ -39,8 +39,11 @@ dorado basecaller models/dna_r10.4.1_e8.2_400bps_sup\@v5.0.0 --modified-bases-mo
 "sup@v5.0.0,4mC_5mC,6mA"
 
 ```
+Santools consensus
+```bash
 
-
+samtools consensus -o barcode$bc.fasta -r "chr20:32434188-32437500" -A -d 40 -X r10.4_sup mapping/barcode$bc.bam
+```
 
 ## Example of fastq and fasta conversion
 
